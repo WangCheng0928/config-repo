@@ -1,6 +1,15 @@
 spring:
   application:
     name: order
+  cloud:
+    stream:
+      bindings:
+        myInput:
+          group: order
+          content-type: application/json
+          destination: mytestOrder
+        myOutput:
+          destination: mytestOrder
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
@@ -13,8 +22,8 @@ spring:
     password: guest
   jpa:
     show-sql: true
+  redis:
+    host: 192.168.99.100
+    port: 6379
 env:
-  dev2
-girl:
-  name: wangcheng
-  age: 19
+  dev
