@@ -1,0 +1,16 @@
+zuul:
+  host:
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
+  routes:
+    zidingyi:
+      #/myProduct/product/list --> /product/product/list
+      path: /myProduct/**
+      serviceId: product
+      #zuul默认是不让cookie通过的,设置敏感头为空可以通过
+      sensitiveHeaders:
+#    #简洁写法
+#    product: /myProduct/**
+  #排除某些路由
+  ignored-patterns:
+    - /**/product/listForOrder
