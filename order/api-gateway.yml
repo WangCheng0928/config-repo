@@ -16,3 +16,12 @@ zuul:
   #排除某些路由
   ignored-patterns:
     - /**/product/listForOrder
+zuul:
+  sensitive-headers:
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
