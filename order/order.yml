@@ -27,11 +27,11 @@ spring:
     port: 6379
 hystrix:
   command:
-    #default:
-      #execution:
-        #isolation:
-          #thread:
-            #timeoutInMilliseconds: 1000
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000
     getProductInfoList:
       execution:
         isolation:
@@ -42,8 +42,8 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 3000
-#feign:
- # hystrix:
-  #  enabled: true
+feign:
+  hystrix:
+    enabled: true
 env:
   dev
