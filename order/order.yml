@@ -31,14 +31,14 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 10000
+            timeoutInMilliseconds: 1000
     getProductInfoList:
       execution:
         isolation:
           thread:
             timeoutInMilliseconds: 3000
-feign:
-  hystrix:
-    enabled: true
+#feign:
+ # hystrix:
+  #  enabled: true
 env:
   dev
