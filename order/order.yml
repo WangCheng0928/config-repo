@@ -22,6 +22,11 @@ spring:
     password: guest
   jpa:
     show-sql: true
+  zipkin:
+    base-url: http://192.168.99.100:9411/zipkin/
+  sleuth:
+    sampler:
+      probability: 1
   redis:
     host: 192.168.99.100
     port: 6379
@@ -47,3 +52,6 @@ feign:
     enabled: true
 env:
   dev
+logging:
+  level:
+    org.springframework.cloud.openfeign: debug
